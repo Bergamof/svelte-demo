@@ -6,6 +6,7 @@ import { TaskCardComponent } from './task-card/task-card.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskUpdateComponent } from './task-update/task-update.component';
 import { RouterModule } from '@angular/router';
+import { routes } from './shared/routing';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
 	],
 	imports: [
 		BrowserModule,
-		RouterModule
+		RouterModule.forRoot(routes)
 	],
 	providers: [],
 	bootstrap: [AppComponent]
