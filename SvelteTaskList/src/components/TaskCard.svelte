@@ -8,7 +8,6 @@
 	let taskUserName = '';
 
 	userStore.subscribe((userList) => {
-		console.log(userList);
 		const user = userList.find((user) => user.id === task.assigneeId);
 		taskUserName = user ? user.name : '';
 	});
@@ -38,7 +37,7 @@
 			id="completion-task-{task.id}"
 			type="checkbox"
 			checked={task.completed}
-			on:change={taskStore.changeTaskCompletion(task, !task.completed)} />
+			on:change={changeCompletion()} />
 		{task.completed ? 'Completed' : 'In progress'}
 	</label>
 
