@@ -7,7 +7,7 @@ export class UserService {
 	private userList: User[] = [{ id: 1, name: 'Adrien' }];
 	private userListObservable$: Subject<User[]> = new BehaviorSubject(this.userList);
 
-	private getAll(): Observable<User[]> {
+	public getAll(): Observable<User[]> {
 		return this.userListObservable$;
 	}
 }
