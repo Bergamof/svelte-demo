@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Task } from '../entities/task';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TaskService {
-	private nextId = 3;
+	private nextId = 1;
 	private taskList: Task[] = [
-		{ id: 1, completed: true, title: 'Example task' },
-		{ id: 2, completed: false, title: 'Another task' }
+		{ id: this.nextId++, completed: true, title: 'Example task' },
+		{ id: this.nextId++, completed: false, title: 'Another task' }
 	];
 	private taskListObservable$: Subject<Task[]> = new BehaviorSubject<Task[]>(this.taskList);
 
@@ -17,7 +17,7 @@ export class TaskService {
 
 	public addTask(task: Task): void {
 		task.id = this.nextId++;
-		this.taskList.push(task);
+		this.taskList = [...this.taskList, task];
 		this.taskListObservable$.next(this.taskList);
 	}
 
