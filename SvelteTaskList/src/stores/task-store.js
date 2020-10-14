@@ -11,7 +11,10 @@ function createTaskList() {
 	]);
 
 	return {
-		subscribe,
+		subscribe: callback => {
+			console.log('Subscribed');
+			return subscribe(callback);
+		},
 		addTask: (taskToAdd) =>
 			update((taskList) => {
 				taskToAdd.id = nextId++;

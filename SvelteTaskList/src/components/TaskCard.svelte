@@ -1,6 +1,5 @@
 <script>
 	import { taskStore } from '../stores/task-store';
-
 	import { userStore } from '../stores/user-store';
 
 	export let task;
@@ -36,8 +35,8 @@
 		<input
 			id="completion-task-{task.id}"
 			type="checkbox"
-			checked={task.completed}
-			on:change={changeCompletion()} />
+			checked={task.completed ? "checked" : ""}
+			on:change={changeCompletion} />
 		{task.completed ? 'Completed' : 'In progress'}
 	</label>
 

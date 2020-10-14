@@ -20,7 +20,6 @@ import { UserService } from '../shared/user-service';
 			<div>{{taskUserName}}</div>
 		</li>
 	`,
-	// styleUrls: ['./task-card.component.css'],
 	styles: [`
 		.task {
 			background: aquamarine;
