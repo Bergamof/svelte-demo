@@ -7,6 +7,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskUpdateComponent } from './task-update/task-update.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './shared/routing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,8 @@ import { routes } from './shared/routing';
 	],
 	imports: [
 		BrowserModule,
-		RouterModule.forRoot(routes)
+		RouterModule.forRoot(routes),
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
