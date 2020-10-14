@@ -6,8 +6,8 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class TaskService {
 	private nextId = 1;
 	private taskList: Task[] = [
-		{ id: this.nextId++, completed: true, title: 'Example task' },
-		{ id: this.nextId++, completed: false, title: 'Another task' }
+		{ id: this.nextId++, completed: true, assigneeId: 1, title: 'Example task' },
+		{ id: this.nextId++, completed: false, assigneeId: 1, title: 'Another task' }
 	];
 	private taskListObservable$: Subject<Task[]> = new BehaviorSubject<Task[]>(this.taskList);
 
