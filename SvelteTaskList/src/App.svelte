@@ -4,6 +4,6 @@
 </script>
 
 <nav>
-	<a href="/" use:link>Home</a>
+	<a href="/" use:link data-testid="home-link">Home</a>
 </nav>
 <Router {routes} />
