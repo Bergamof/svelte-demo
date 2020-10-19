@@ -42,7 +42,8 @@ module.exports = {
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
 					'css-loader'
 				]
-			}
+			},
+			{ test: /\\.ts$/, use: 'ts-loader' }
 		]
 	},
 	mode,
