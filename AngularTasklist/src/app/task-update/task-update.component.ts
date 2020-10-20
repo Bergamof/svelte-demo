@@ -29,7 +29,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class TaskUpdateComponent {
 	public taskForm: FormGroup;
 
-	constructor(private taskService: TaskService, private userService: UserService, private router: Router, formBuilder: FormBuilder) {
+	constructor(private taskService: TaskService, public userService: UserService, private router: Router, formBuilder: FormBuilder) {
 		this.taskForm = formBuilder.group({
 			assigneeId: '',
 			title: ''

@@ -7,9 +7,9 @@ import { UserService } from '../shared/user-service';
 	selector: 'app-task-card',
 	template: `
 		<li class="task">
-			<label for="completion">
+			<label [attr.for]="'completion-task-' + task.id">
 				<input
-					id="completion"
+					[id]="'completion-task-' + task.id"
 					type="checkbox"
 					[checked]=task.completed
 					(change)="changeTaskCompletion()" />
