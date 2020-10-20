@@ -22,10 +22,10 @@ describe('AppComponent', () => {
 		expect(app.title).toEqual('AngularTasklist');
 	});
 
-	it('should render title', () => {
+	it('should have a link to homepage', () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		fixture.detectChanges();
 		const compiled = fixture.nativeElement;
-		expect(compiled.querySelector('.content span').textContent).toContain('AngularTasklist app is running!');
+		expect(compiled.querySelector('nav a').textContent).toContain('Home');
 	});
 });

@@ -16,6 +16,7 @@ describe('TaskCardComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(TaskCardComponent);
 		component = fixture.componentInstance;
+		component.task = { id: 1, assigneeId: 1, completed: false, title: 'Test task' };
 		fixture.detectChanges();
 	});
 
