@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../entities/task';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, defer, Observable, Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
@@ -12,7 +12,10 @@ export class TaskService {
 	private taskListObservable$: Subject<Task[]> = new BehaviorSubject<Task[]>(this.taskList);
 
 	public getAll(): Observable<Task[]> {
-		return this.taskListObservable$;
+		return defer(() => {
+			console.log('Subscribed');
+			return this.taskListObservable$.asObservable();
+		});
 	}
 
 	public addTask(task: Task): void {
