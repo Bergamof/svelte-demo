@@ -10,8 +10,8 @@ import { TaskService } from '../shared/task-service';
 
 		<ng-container *ngIf="taskService.getAll()|async as taskList">
 			<ng-container *ngIf="taskList.length>0; else notask">
-				<ul *ngFor="let task of taskList">
-					<app-task-card [task]="task"></app-task-card>
+				<ul>
+					<app-task-card *ngFor="let task of taskList" [task]="task"></app-task-card>
 				</ul>
 			</ng-container>
 		</ng-container>
