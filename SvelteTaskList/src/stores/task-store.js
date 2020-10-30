@@ -12,7 +12,7 @@ function createTaskList() {
 
 	return {
 		subscribe: callback => {
-			console.log('Subscribed');
+			console.log('New subscription to the task store');
 			return subscribe(callback);
 		},
 		addTask: (taskToAdd) =>

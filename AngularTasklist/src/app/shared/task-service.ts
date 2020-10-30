@@ -13,7 +13,7 @@ export class TaskService {
 
 	public getAll(): Observable<Task[]> {
 		return defer(() => {
-			console.log('Subscribed');
+			console.log('New subscription to the task service');
 			return this.taskListObservable$.asObservable();
 		});
 	}
