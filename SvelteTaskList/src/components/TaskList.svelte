@@ -13,6 +13,7 @@
 			<TaskCard {task} />
 		{/each}
 	</ul>
+	<div>{$taskStore.length} task{$taskStore.length > 1 ? 's' : ''}</div>
 {:else}
 	<div>No task</div>
 {/if}
